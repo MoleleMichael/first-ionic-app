@@ -1,14 +1,20 @@
-body{
-  background-image:  linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7) ), url(https://i.pinimg.com/originals/66/be/79/66be7922881ea8c3bcb1bd40ba12a797.jpg);
+ion-grid{
+  background-image:  linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7) ), url(https://i.pinimg.com/originals/b0/7b/a5/b07ba538878dcb34e0b2a6014c238ea7.jpg);
   background-size: cover;
 	margin: 0px;
 }
 h2{
 	font-family:Lucida Calligraphy;
 	text-align:center;
-	font-size: 50pt;
-	color:grey;
+	font-size: 20pt;
+  padding: -10px;
+	color:rgb(27, 136, 118);
 	
+}
+p{
+  font-family:Lucida Calligraphy;
+	text-align:center;
+  color:rgba(16, 77, 92, 0.966);
 }
 #loginpage{
   width:auto;
@@ -35,7 +41,7 @@ message a{
 ion-input{
 	font-family:"Roboto",sans-serif;
 	outline: 1;
-	background:#2b2929;
+	//background:#2b2929;
 	width: 100%;
 	border: 0;
 	margin: 0 0 15px;
