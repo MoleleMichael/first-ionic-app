@@ -1,6 +1,6 @@
 <ion-content padding>
  <ion-item>
-     <ion-input type="text" placeholder="Enter task" > 
+     <ion-input type="text" [(ngModel)]="taskName" placeholder="Enter task" > 
      </ion-input>
      <div class="item-note" item-end>
          <ion-button ion-button (click)="addTask()" color="primary" fill="outline">
@@ -8,4 +8,29 @@
          </ion-button>
      </div>
  </ion-item>
+  
+   <div padding>
+    <ion-list>
+   <ion-item *ngFor="let todo of tasklist; let i = index">
+     <ion-col>
+      {{todo.content}}
+      </ion-col>
+       <ion-col>
+      {{todo.status}}
+     </ion-col>
+     <ion-col>
+      {{todo.priority}} 
+    </ion-col>
+      <div class="item-note" item-end>
+    <ion-button ion-button clear (click)="updateTask(i)" color="primary" fill="outline">
+      <ion-icon name="create"></ion-icon>
+    </ion-button>
+    <ion-button ion-button clear (click)="deleteTask(i)" color="primary" fill="outline">
+      <ion-icon name="trash"></ion-icon>
+    </ion-button>
+  </div>
+</ion-item>
+  </ion-list>
+  </div>
+
 </ion-content>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-to-do',
   templateUrl: './to-do.component.html',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToDoComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(public navCtrl: NavController) { }
+  
 
   ngOnInit() {
   }
@@ -21,6 +24,8 @@ tasklist = [
   {content:"Buld mobile app",status:"OnHold",priority:"Major"},   
   ]
 
+  taskName: string = "";
+ 
 addTask() {
     if (this.taskName.length > 0) {
       let task = this.taskName;
@@ -28,4 +33,8 @@ addTask() {
       this.taskName = "";
     }
   }
+  deleteTask(index){
+  this.tasklist.splice(index, 1);
+}
+
 }
