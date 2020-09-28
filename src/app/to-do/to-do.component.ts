@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-to-do',
@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./to-do.component.css']
 })
 export class ToDoComponent implements OnInit {
-public alertCtrl
+//public alertCtrl
 
-  constructor() { }
+  constructor(public alertController: AlertController) { }
   
 
   ngOnInit() {
@@ -35,17 +35,18 @@ addTask() {
   deleteTask(index){
   this.tasklist.splice(index, 1);
 }
-updateTask(index) {
-  let alert = this.alertCtrl.create({
+ async updateTask(index) {
+   const alert = await this.alertController.create({
+  //let alert = this.alertController.create
     title: 'Update Task?',
     message: 'Enter the new task to be done.',
-    inputs: [{ name: 'editContent', placeholder: 'Conten' },
+    inputs: [{ name: 'editContent', placeholder: 'Content' },
             { name: 'editStatus', placeholder: 'Status' },
             { name: 'editPriority', placeholder: 'Priority' }],
     buttons: [{ text: 'Cancel', role: 'cancel' },
               { text: 'Update', handler: data => {  
                 this.tasklist[index] = data.editTask; }}]
   });
-  alert.present();
+ await alert.present();
 }
 }
